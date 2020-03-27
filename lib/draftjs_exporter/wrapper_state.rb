@@ -54,9 +54,8 @@ module DraftjsExporter
     end
 
     def nokogiri_options(element_name, element_attributes)
-      config = element_attributes || {}
-      options = {}
-      options[:class] = config.fetch(:className) if config.key?(:className)
+      options = element_attributes || {}
+      options[:class] = options.fetch(:className) if options.key?(:className)
       [element_name, options]
     end
 
